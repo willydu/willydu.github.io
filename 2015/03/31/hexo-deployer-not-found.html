@@ -4,17 +4,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>来自西界的博客</title>
+  <title>升级hexo碰到“Deployer not found”问题及解决 | 来自西界的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="来自西界的博客">
-<meta property="og:url" content="http://willydu.github.io/archives/2014/09/index.html">
+  <meta name="description" content="问题1 hexo指令无法执行可能是升级方法不对，导致hexo generate指令也无法执行，后来索性重装了git和node，重新安装hexo。generate和server指令都能执行了，但是出现了问题2。
+问题2 “Deployer not found: github”更新文章执行hexo deploy时，出现以上提示，找来找去始终没发现原因。我备份了原来的source、themes文件夹和_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="升级hexo碰到“Deployer not found”问题及解决">
+<meta property="og:url" content="http://willydu.github.io/2015/03/31/hexo-deployer-not-found.html">
 <meta property="og:site_name" content="来自西界的博客">
-<meta property="og:description" content="blog">
+<meta property="og:description" content="问题1 hexo指令无法执行可能是升级方法不对，导致hexo generate指令也无法执行，后来索性重装了git和node，重新安装hexo。generate和server指令都能执行了，但是出现了问题2。
+问题2 “Deployer not found: github”更新文章执行hexo deploy时，出现以上提示，找来找去始终没发现原因。我备份了原来的source、themes文件夹和_">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="来自西界的博客">
-<meta name="twitter:description" content="blog">
+<meta name="twitter:title" content="升级hexo碰到“Deployer not found”问题及解决">
+<meta name="twitter:description" content="问题1 hexo指令无法执行可能是升级方法不对，导致hexo generate指令也无法执行，后来索性重装了git和node，重新安装hexo。generate和server指令都能执行了，但是出现了问题2。
+问题2 “Deployer not found: github”更新文章执行hexo deploy时，出现以上提示，找来找去始终没发现原因。我备份了原来的source、themes文件夹和_">
   
     <link rel="alternative" href="/atom.xml" title="来自西界的博客" type="application/atom+xml">
   
@@ -85,39 +88,75 @@ ga('send', 'pageview');
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/09/16/read-inpsired.html" class="archive-article-date">
-  <time datetime="2014-09-16T05:39:00.000Z" itemprop="datePublished">9月 16</time>
+      <section id="main"><article id="post-hexo-deployer-not-found" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/31/hexo-deployer-not-found.html" class="article-date">
+  <time datetime="2015-03-31T05:28:34.000Z" itemprop="datePublished">3月 31 2015</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/IT/">IT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/09/16/read-inpsired.html">《启示录——打造用户喜爱的产品》思维导图</a>
+    <h1 class="article-title" itemprop="name">
+      升级hexo碰到“Deployer not found”问题及解决
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题1_hexo指令无法执行">问题1 hexo指令无法执行</h1><p>可能是升级方法不对，导致hexo generate指令也无法执行，后来索性重装了git和node，重新安装hexo。generate和server指令都能执行了，但是出现了问题2。</p>
+<h1 id="问题2_“Deployer_not_found:_github”">问题2 “Deployer not found: github”</h1><p>更新文章执行hexo deploy时，出现以上提示，找来找去始终没发现原因。我备份了原来的source、themes文件夹和_config.yml主配置文件。后来终于在一些技术社区里找到了原因，需要将原来_config.yml配置中的deploy下的“type”字段中的“github”改为“git”。<br>再执行</p>
+<blockquote>
+<p>npm install hexo-deployer-git —save</p>
+</blockquote>
+<p>重新deploy即可。<br>后来发现早有人在issue里提到了<a href="https://github.com/hexojs/hexo/issues/1040" target="_blank" rel="external">这个问题</a>，而且也提及了解决方法，虽然不知为何开发者要修改这一参数。</p>
+<h1 id="总结">总结</h1><p>很多技术问题的出现都是有因可循的，不要没事就重装什么的，其实问题1只需重新安装hexo即可，无需浪费时间重装git和node，自己并没有细看报错说明，就选择重装了，囧。<br>有问题找谷歌，基本早有前人为你解答了，要会搜索，不要只看中文网站。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://willydu.github.io/2015/03/31/hexo-deployer-not-found.html" data-id="ci7wv8k7m001768u060w1vnzk" class="article-share-link" data-share="baidu">分享到</a>
+      
+
+      
+        <a href="http://willydu.github.io/2015/03/31/hexo-deployer-not-found.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IT/">IT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/03/01/report-of-ipe.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">“污染地图”产品体验</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/03/31/hexo-deployer-not-found.html" data-title="升级hexo碰到“Deployer not found”问题及解决" data-url="http://willydu.github.io/2015/03/31/hexo-deployer-not-found.html"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
